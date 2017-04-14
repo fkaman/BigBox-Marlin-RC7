@@ -121,7 +121,7 @@
 // The following define selects which electronics board you have.
 // Please choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
-  #define MOTHERBOARD BOARD_RAMPS_14_EFB
+  #define MOTHERBOARD BOARD_RUMBA
 #endif
 
 // Optional custom name for your RepStrap or other custom machine
@@ -134,7 +134,7 @@
 
 // This defines the number of extruders
 // :[1,2,3,4]
-#define EXTRUDERS 1
+#define EXTRUDERS 2
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
 //#define SINGLENOZZLE
@@ -173,7 +173,7 @@
 // 1 = ATX
 // 2 = X-Box 360 203Watts (the blue wire connected to PS_ON and the red wire to VCC)
 // :{1:'ATX',2:'X-Box 360'}
-#define POWER_SUPPLY 1
+#define POWER_SUPPLY 0
 
 // Define this to have the electronics keep the power supply off on startup. If you don't know what this is leave it.
 //#define PS_DEFAULT_OFF
@@ -257,8 +257,8 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
-#define HEATER_0_MAXTEMP 275
-#define HEATER_1_MAXTEMP 275
+#define HEATER_0_MAXTEMP 325
+#define HEATER_1_MAXTEMP 325
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
 #define BED_MAXTEMP 150
@@ -286,9 +286,9 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Ultimaker
-  #define  DEFAULT_Kp 22.2
-  #define  DEFAULT_Ki 1.08
-  #define  DEFAULT_Kd 114
+  #define  DEFAULT_Kp 43.83
+  #define  DEFAULT_Ki 5.64
+  #define  DEFAULT_Kd 85.10 
 
   // MakerGear
   //#define  DEFAULT_Kp 7.0
@@ -314,7 +314,7 @@
 // If your configuration is significantly different than this and you don't understand the issues involved, you probably
 // shouldn't use bed PID until someone else verifies your hardware works.
 // If this is enabled, find your own PID constants below.
-//#define PIDTEMPBED
+#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -330,11 +330,12 @@
 
   #define PID_BED_INTEGRAL_DRIVE_MAX MAX_BED_POWER //limit for the integral term
 
-  //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
+  //E3D BigBox Variable Power Density Heated Bed (24V)
+    #define  DEFAULT_bedKp 288.05
+    #define  DEFAULT_bedKi 54.27
+    #define  DEFAULT_bedKd 382.24
+ //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define  DEFAULT_bedKp 10.00
-  #define  DEFAULT_bedKi .023
-  #define  DEFAULT_bedKd 305.4
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
@@ -354,7 +355,7 @@
 #define PREVENT_LENGTHY_EXTRUDE
 
 #define EXTRUDE_MINTEMP 170
-#define EXTRUDE_MAXLENGTH (X_MAX_LENGTH+Y_MAX_LENGTH) //prevent extrusion of very large distances.
+#define EXTRUDE_MAXLENGTH 805 //prevent extrusion of very large distances.
 
 //===========================================================================
 //======================== Thermal Runaway Protection =======================
@@ -401,7 +402,7 @@
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
-//#define USE_XMAX_PLUG
+#define USE_XMAX_PLUG
 //#define USE_YMAX_PLUG
 //#define USE_ZMAX_PLUG
 
@@ -449,7 +450,7 @@
 //#define FIX_MOUNTED_PROBE
 
 // The BLTouch probe emulates a servo probe.
-//#define BLTOUCH
+#define BLTOUCH
 
 // Z Servo Probe, such as an endstop switch on a rotating arm.
 //#define Z_ENDSTOP_SERVO_NR 0
@@ -605,12 +606,12 @@
 // @section machine
 
 // Travel limits after homing (units are in mm)
-#define X_MIN_POS 0
+#define X_MIN_POS -27
 #define Y_MIN_POS 0
 #define Z_MIN_POS 0
-#define X_MAX_POS 200
-#define Y_MAX_POS 200
-#define Z_MAX_POS 200
+#define X_MAX_POS 300
+#define Y_MAX_POS 240
+#define Z_MAX_POS 300
 
 //===========================================================================
 //========================= Filament Runout Sensor ==========================
