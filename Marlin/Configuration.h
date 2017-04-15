@@ -121,7 +121,11 @@
 // The following define selects which electronics board you have.
 // Please choose the name from boards.h that matches your setup
 #ifndef MOTHERBOARD
+<<<<<<< HEAD
 #define MOTHERBOARD BOARD_RUMBA //Modified by FK 15-4-2017
+=======
+  #define MOTHERBOARD BOARD_RUMBA
+>>>>>>> origin/master
 #endif
 
 // Optional custom name for your RepStrap or other custom machine
@@ -134,7 +138,11 @@
 
 // This defines the number of extruders
 // :[1,2,3,4]
+<<<<<<< HEAD
 #define EXTRUDERS 2 //Modified by FK 15-4-2017
+=======
+#define EXTRUDERS 2
+>>>>>>> origin/master
 
 // For Cyclops or any "multi-extruder" that shares a single nozzle.
 //#define SINGLENOZZLE
@@ -225,11 +233,19 @@
 //#define DUMMY_THERMISTOR_998_VALUE 25
 //#define DUMMY_THERMISTOR_999_VALUE 100
 // :{ '0': "Not used",'1':"100k / 4.7k - EPCOS",'2':"200k / 4.7k - ATC Semitec 204GT-2",'3':"Mendel-parts / 4.7k",'4':"10k !! do not use for a hotend. Bad resolution at high temp. !!",'5':"100K / 4.7k - ATC Semitec 104GT-2 (Used in ParCan & J-Head)",'6':"100k / 4.7k EPCOS - Not as accurate as Table 1",'7':"100k / 4.7k Honeywell 135-104LAG-J01",'8':"100k / 4.7k 0603 SMD Vishay NTCS0603E3104FXT",'9':"100k / 4.7k GE Sensing AL03006-58.2K-97-G1",'10':"100k / 4.7k RS 198-961",'11':"100k / 4.7k beta 3950 1%",'12':"100k / 4.7k 0603 SMD Vishay NTCS0603E3104FXT (calibrated for Makibox hot bed)",'13':"100k Hisens 3950  1% up to 300°C for hotend 'Simple ONE ' & hotend 'All In ONE'",'20':"PT100 (Ultimainboard V2.x)",'51':"100k / 1k - EPCOS",'52':"200k / 1k - ATC Semitec 204GT-2",'55':"100k / 1k - ATC Semitec 104GT-2 (Used in ParCan & J-Head)",'60':"100k Maker's Tool Works Kapton Bed Thermistor beta=3950",'66':"Dyze Design 4.7M High Temperature thermistor",'70':"the 100K thermistor found in the bq Hephestos 2",'71':"100k / 4.7k Honeywell 135-104LAF-J01",'147':"Pt100 / 4.7k",'1047':"Pt1000 / 4.7k",'110':"Pt100 / 1k (non-standard)",'1010':"Pt1000 / 1k (non standard)",'-3':"Thermocouple + MAX31855 (only for sensor 0)",'-2':"Thermocouple + MAX6675 (only for sensor 0)",'-1':"Thermocouple + AD595",'998':"Dummy 1",'999':"Dummy 2" }
+<<<<<<< HEAD
 #define TEMP_SENSOR_0 20 //Modified by FK 15-4-2017
 #define TEMP_SENSOR_1 20 //Modified by FK 15-4-2017
 #define TEMP_SENSOR_2 0
 #define TEMP_SENSOR_3 0
 #define TEMP_SENSOR_BED 5 //Modified by FK 15-4-2017
+=======
+#define TEMP_SENSOR_0 20
+#define TEMP_SENSOR_1 20
+#define TEMP_SENSOR_2 0
+#define TEMP_SENSOR_3 0
+#define TEMP_SENSOR_BED 5
+>>>>>>> origin/master
 
 // This makes temp sensor 1 a redundant sensor for sensor 0. If the temperatures difference between these sensors is to high the print will be aborted.
 //#define TEMP_SENSOR_1_AS_REDUNDANT
@@ -257,8 +273,13 @@
 // When temperature exceeds max temp, your heater will be switched off.
 // This feature exists to protect your hotend from overheating accidentally, but *NOT* from thermistor short/failure!
 // You should use MINTEMP for thermistor short/failure protection.
+<<<<<<< HEAD
 #define HEATER_0_MAXTEMP 320 //Modified by FK 15-4-2017
 #define HEATER_1_MAXTEMP 320 //Modified by FK 15-4-2017
+=======
+#define HEATER_0_MAXTEMP 325
+#define HEATER_1_MAXTEMP 325
+>>>>>>> origin/master
 #define HEATER_2_MAXTEMP 275
 #define HEATER_3_MAXTEMP 275
 #define BED_MAXTEMP 150
@@ -286,9 +307,15 @@
 
   // If you are using a pre-configured hotend then you can use one of the value sets by uncommenting it
   // Ultimaker
+<<<<<<< HEAD
 #define DEFAULT_Kp 14.17 //Modified by FK 15-4-2017
 #define DEFAULT_Ki 1.58 //Modified by FK 15-4-2017
 #define DEFAULT_Kd 31.7 //Modified by FK 15-4-2017
+=======
+  #define  DEFAULT_Kp 43.83
+  #define  DEFAULT_Ki 5.64
+  #define  DEFAULT_Kd 85.10 
+>>>>>>> origin/master
 
   // MakerGear
 #define DEFAULT_Kp 14.17 //Modified by FK 15-4-2017
@@ -314,7 +341,11 @@
 // If your configuration is significantly different than this and you don't understand the issues involved, you probably
 // shouldn't use bed PID until someone else verifies your hardware works.
 // If this is enabled, find your own PID constants below.
+<<<<<<< HEAD
 #define PIDTEMPBED  //Modified by FK 15-4-2017
+=======
+#define PIDTEMPBED
+>>>>>>> origin/master
 
 //#define BED_LIMIT_SWITCHING
 
@@ -331,9 +362,15 @@
   #define PID_BED_INTEGRAL_DRIVE_MAX MAX_BED_POWER //limit for the integral term
 
   //E3D BigBox Variable Power Density Heated Bed (24V)
+<<<<<<< HEAD
 #define DEFAULT_bedKp 781.34 //Modified by FK 15-4-2017
 #define DEFAULT_bedKi 149.95 //Modified by FK 15-4-2017
 #define DEFAULT_bedKd 1017.79 //Modified by FK 15-4-2017
+=======
+    #define  DEFAULT_bedKp 288.05
+    #define  DEFAULT_bedKi 54.27
+    #define  DEFAULT_bedKd 382.24
+>>>>>>> origin/master
  //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
 
@@ -402,7 +439,11 @@
 #define USE_XMIN_PLUG
 #define USE_YMIN_PLUG
 #define USE_ZMIN_PLUG
+<<<<<<< HEAD
 #define USE_XMAX_PLUG  //Modified by FK 15-4-2017
+=======
+#define USE_XMAX_PLUG
+>>>>>>> origin/master
 //#define USE_YMAX_PLUG
 //#define USE_ZMAX_PLUG
 
@@ -450,7 +491,11 @@
 //#define FIX_MOUNTED_PROBE
 
 // The BLTouch probe emulates a servo probe.
+<<<<<<< HEAD
 #define BLTOUCH  //Modified by FK 15-4-2017
+=======
+#define BLTOUCH
+>>>>>>> origin/master
 
 // Z Servo Probe, such as an endstop switch on a rotating arm.
 #define Z_ENDSTOP_SERVO_NR 0 //Modified by FK 15-4-2017
@@ -606,12 +651,21 @@
 // @section machine
 
 // Travel limits after homing (units are in mm)
+<<<<<<< HEAD
 #define X_MIN_POS -27 //Modified by FK 15-4-2017
 #define Y_MIN_POS 0 //Modified by FK 15-4-2017
 #define Z_MIN_POS 0
 #define X_MAX_POS 300 //Modified by FK 15-4-2017
 #define Y_MAX_POS 240 //Modified by FK 15-4-2017
 #define Z_MAX_POS 300 //Modified by FK 15-4-2017
+=======
+#define X_MIN_POS -27
+#define Y_MIN_POS 0
+#define Z_MIN_POS 0
+#define X_MAX_POS 300
+#define Y_MAX_POS 240
+#define Z_MAX_POS 300
+>>>>>>> origin/master
 
 //===========================================================================
 //========================= Filament Runout Sensor ==========================
