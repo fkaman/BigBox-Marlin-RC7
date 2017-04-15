@@ -291,14 +291,14 @@
 #define DEFAULT_Kd 31.7 //Modified by FK 15-4-2017
 
   // MakerGear
-#define DEFAULT_Kp 14.17 //Modified by FK 15-4-2017
-#define DEFAULT_Ki 1.58 //Modified by FK 15-4-2017
-#define DEFAULT_Kd 31.7 //Modified by FK 15-4-2017
+//#define DEFAULT_Kp 14.17 //Modified by FK 15-4-2017
+//#define DEFAULT_Ki 1.58 //Modified by FK 15-4-2017
+//#define DEFAULT_Kd 31.7 //Modified by FK 15-4-2017
 
   // Mendel Parts V9 on 12V
-#define DEFAULT_Kp 14.17 //Modified by FK 15-4-2017
-#define DEFAULT_Ki 1.58 //Modified by FK 15-4-2017
-#define DEFAULT_Kd 31.7 //Modified by FK 15-4-2017
+//#define DEFAULT_Kp 14.17 //Modified by FK 15-4-2017
+//#define DEFAULT_Ki 1.58 //Modified by FK 15-4-2017
+//#define DEFAULT_Kd 31.7 //Modified by FK 15-4-2017
 
 #endif // PIDTEMP
 
@@ -339,9 +339,9 @@
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   //from pidautotune
-#define DEFAULT_bedKp 781.34 //Modified by FK 15-4-2017
-#define DEFAULT_bedKi 149.95 //Modified by FK 15-4-2017
-#define DEFAULT_bedKd 1017.79 //Modified by FK 15-4-2017
+//#define DEFAULT_bedKp 781.34 //Modified by FK 15-4-2017
+//#define DEFAULT_bedKi 149.95 //Modified by FK 15-4-2017
+//#define DEFAULT_bedKd 1017.79 //Modified by FK 15-4-2017
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -720,7 +720,7 @@
 
 // Manually set the home position. Leave these undefined for automatic settings.
 // For DELTA this is the top-center of the Cartesian print volume.
-//#define MANUAL_X_HOME_POS 0
+#define MANUAL_X_HOME_POS -27 //Modified by FK 15-4-2017
 //#define MANUAL_Y_HOME_POS 0
 //#define MANUAL_Z_HOME_POS 0 // Distance between the nozzle to printbed after homing
 
