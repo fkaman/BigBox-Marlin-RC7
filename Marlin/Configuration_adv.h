@@ -74,8 +74,8 @@
  * If you get false positives for "Thermal Runaway" increase THERMAL_PROTECTION_HYSTERESIS and/or THERMAL_PROTECTION_PERIOD
  */
 #if ENABLED(THERMAL_PROTECTION_HOTENDS)
-  #define THERMAL_PROTECTION_PERIOD 40        // Seconds
-  #define THERMAL_PROTECTION_HYSTERESIS 4     // Degrees Celsius
+#define THERMAL_PROTECTION_PERIOD 60 //Modified by FK 15-4-2017
+#define THERMAL_PROTECTION_HYSTERESIS 10 //Modified by FK 15-4-2017
 
   /**
    * Whenever an M104 or M109 increases the target temperature the firmware will wait for the
@@ -86,16 +86,16 @@
    * If you get false positives for "Heating failed" increase WATCH_TEMP_PERIOD and/or decrease WATCH_TEMP_INCREASE
    * WATCH_TEMP_INCREASE should not be below 2.
    */
-  #define WATCH_TEMP_PERIOD 20                // Seconds
-  #define WATCH_TEMP_INCREASE 2               // Degrees Celsius
+#define WATCH_TEMP_PERIOD 60 //Modified by FK 15-4-2017
+#define WATCH_TEMP_INCREASE 10 //Modified by FK 15-4-2017
 #endif
 
 /**
  * Thermal Protection parameters for the bed are just as above for hotends.
  */
 #if ENABLED(THERMAL_PROTECTION_BED)
-  #define THERMAL_PROTECTION_BED_PERIOD 20    // Seconds
-  #define THERMAL_PROTECTION_BED_HYSTERESIS 2 // Degrees Celsius
+#define THERMAL_PROTECTION_BED_PERIOD 60 //Modified by FK 15-4-2017
+#define THERMAL_PROTECTION_BED_HYSTERESIS 10 //Modified by FK 15-4-2017
 
   /**
    * Whenever an M140 or M190 increases the target temperature the firmware will wait for the
@@ -194,12 +194,12 @@
 // When first starting the main fan, run it at full speed for the
 // given number of milliseconds.  This gets the fan spinning reliably
 // before setting a PWM value. (Does not work with software PWM for fan on Sanguinololu)
-//#define FAN_KICKSTART_TIME 100
+#define FAN_KICKSTART_TIME 100 //Modified by FK 15-4-2017
 
 // This defines the minimal speed for the main fan, run in PWM mode
 // to enable uncomment and set minimal PWM speed for reliable running (1-255)
 // if fan speed is [1 - (FAN_MIN_PWM-1)] it is set to FAN_MIN_PWM
-//#define FAN_MIN_PWM 50
+#define FAN_MIN_PWM 30 //Modified by FK 15-4-2017
 
 // @section extruder
 
@@ -208,8 +208,8 @@
 // extruder temperature is above/below EXTRUDER_AUTO_FAN_TEMPERATURE.
 // Multiple extruders can be assigned to the same pin in which case
 // the fan will turn on when any selected extruder is above the threshold.
-#define EXTRUDER_0_AUTO_FAN_PIN -1
-#define EXTRUDER_1_AUTO_FAN_PIN -1
+#define EXTRUDER_0_AUTO_FAN_PIN 8 //Modified by FK 15-4-2017
+#define EXTRUDER_1_AUTO_FAN_PIN 8 //Modified by FK 15-4-2017
 #define EXTRUDER_2_AUTO_FAN_PIN -1
 #define EXTRUDER_3_AUTO_FAN_PIN -1
 #define EXTRUDER_AUTO_FAN_TEMPERATURE 50
@@ -276,15 +276,15 @@
 // A dual x-carriage design has the advantage that the inactive extruder can be parked which
 // prevents hot-end ooze contaminating the print. It also reduces the weight of each x-carriage
 // allowing faster printing speeds. Connect your X2 stepper to the first unused E plug.
-//#define DUAL_X_CARRIAGE
+#define DUAL_X_CARRIAGE  //Modified by FK 15-4-2017
 #if ENABLED(DUAL_X_CARRIAGE)
   // Configuration for second X-carriage
   // Note: the first x-carriage is defined as the x-carriage which homes to the minimum endstop;
   // the second x-carriage always homes to the maximum endstop.
-  #define X2_MIN_POS 80     // set minimum to ensure second x-carriage doesn't hit the parked first X-carriage
-  #define X2_MAX_POS 353    // set maximum to the distance between toolheads when both heads are homed
-  #define X2_HOME_DIR 1     // the second X-carriage always homes to the maximum endstop position
-  #define X2_HOME_POS X2_MAX_POS // default home position is the maximum carriage position
+#define X2_MIN_POS 0 //Modified by FK 15-4-2017
+#define X2_MAX_POS 330 //Modified by FK 15-4-2017
+#define X2_HOME_DIR 1 //Modified by FK 15-4-2017
+#define X2_HOME_POS X2_MAX_POS //Modified by FK 15-4-2017
       // However: In this mode the HOTEND_OFFSET_X value for the second extruder provides a software
       // override for X2_HOME_POS. This also allow recalibration of the distance between the two endstops
       // without modifying the firmware (through the "M218 T1 X???" command).
@@ -300,14 +300,14 @@
   //                           once. (2nd extruder x offset and temp offset are set using: M605 S2 [Xnnn] [Rmmm])
 
   // This is the default power-up mode which can be later using M605.
-  #define DEFAULT_DUAL_X_CARRIAGE_MODE 0
+#define DEFAULT_DUAL_X_CARRIAGE_MODE 0 //Modified by FK 15-4-2017
 
   // Default settings in "Auto-park Mode"
-  #define TOOLCHANGE_PARK_ZLIFT   0.2      // the distance to raise Z axis when parking an extruder
-  #define TOOLCHANGE_UNPARK_ZLIFT 1        // the distance to raise Z axis when unparking an extruder
+#define TOOLCHANGE_PARK_ZLIFT 1 //Modified by FK 15-4-2017
+#define TOOLCHANGE_UNPARK_ZLIFT 1 //Modified by FK 15-4-2017
 
   // Default x offset in duplication mode (typically set to half print bed width)
-  #define DEFAULT_DUPLICATION_X_OFFSET 100
+#define DEFAULT_DUPLICATION_X_OFFSET 150 //Modified by FK 15-4-2017
 
 #endif //DUAL_X_CARRIAGE
 
@@ -317,11 +317,11 @@
 #define X_HOME_BUMP_MM 5
 #define Y_HOME_BUMP_MM 5
 #define Z_HOME_BUMP_MM 2
-#define HOMING_BUMP_DIVISOR {2, 2, 4}  // Re-Bump Speed Divisor (Divides the Homing Feedrate)
+#define HOMING_BUMP_DIVISOR {2, 2, 4} //Modified by FK 15-4-2017
 //#define QUICK_HOME  //if this is defined, if both x and y are to be homed, a diagonal move will be performed initially.
 
 // When G28 is called, this option will make Y home before X
-//#define HOME_Y_BEFORE_X
+#define HOME_Y_BEFORE_X  //Modified by FK 15-4-2017
 
 // @section machine
 
@@ -461,7 +461,7 @@
 
 // The hardware watchdog should reset the microcontroller disabling all outputs,
 // in case the firmware gets stuck and doesn't do temperature regulation.
-#define USE_WATCHDOG
+//#define USE_WATCHDOG  //Modified by FK 15-4-2017
 
 #if ENABLED(USE_WATCHDOG)
   // If you have a watchdog reboot in an ArduinoMega2560 then the device will hang forever, as a watchdog reset will leave the watchdog on.
@@ -475,12 +475,12 @@
 // Babystepping enables the user to control the axis in tiny amounts, independently from the normal printing process
 // it can e.g. be used to change z-positions in the print startup phase in real-time
 // does not respect endstops!
-//#define BABYSTEPPING
+#define BABYSTEPPING  //Modified by FK 15-4-2017
 #if ENABLED(BABYSTEPPING)
-  #define BABYSTEP_XY  //not only z, but also XY in the menu. more clutter, more functions
+//#define BABYSTEP_XY  //Modified by FK 15-4-2017
                        //not implemented for deltabots!
-  #define BABYSTEP_INVERT_Z false  //true for inverse movements in Z
-  #define BABYSTEP_MULTIPLICATOR 1 //faster movements
+#define BABYSTEP_INVERT_Z false //Modified by FK 15-4-2017
+#define BABYSTEP_MULTIPLICATOR 40 //Modified by FK 15-4-2017
 #endif
 
 // @section extruder
@@ -502,10 +502,10 @@
 // Implementation of a linear pressure control
 // Assumption: advance = k * (delta velocity)
 // K=0 means advance disabled. A good value for a gregs wade extruder will be around K=75
-//#define LIN_ADVANCE
+//#define LIN_ADVANCE  //Modified by FK 15-4-2017
 
 #if ENABLED(LIN_ADVANCE)
-  #define LIN_ADVANCE_K 75
+//#define LIN_ADVANCE_K 50 //Modified by FK 15-4-2017
 #endif
 
 // @section leveling
@@ -523,7 +523,7 @@
 // @section extras
 
 // Arc interpretation settings:
-#define ARC_SUPPORT  // Disabling this saves ~2738 bytes
+//#define ARC_SUPPORT  //Modified by FK 15-4-2017
 #define MM_PER_ARC_SEGMENT 1
 #define N_ARC_CORRECTION 25
 
