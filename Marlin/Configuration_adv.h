@@ -281,8 +281,8 @@
   // Configuration for second X-carriage
   // Note: the first x-carriage is defined as the x-carriage which homes to the minimum endstop;
   // the second x-carriage always homes to the maximum endstop.
-#define X2_MIN_POS 0 //Modified by FK 15-4-2017
-#define X2_MAX_POS 330 //Modified by FK 15-4-2017
+#define X2_MIN_POS -27 //Modified by FK 15-4-2017
+#define X2_MAX_POS 332 //Modified by FK 15-4-2017
 #define X2_HOME_DIR 1 //Modified by FK 15-4-2017
 #define X2_HOME_POS X2_MAX_POS //Modified by FK 15-4-2017
       // However: In this mode the HOTEND_OFFSET_X value for the second extruder provides a software
